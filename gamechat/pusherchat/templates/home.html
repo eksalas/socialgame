@@ -1,0 +1,26 @@
+ {% load static %}
+ <!DOCTYPE html>
+ 
+ 
+ 
+<html class="no-js" lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="{% static "/css/foundation.css" %}">
+    <link rel="stylesheet" href="{% static "/css/app.css" %}">
+  </head>
+  <body>
+<div class="small-6 large-centered columns" style="text-align:center">
+ <h1>Social Gaming</h1>
+</div>
+<h4>Enter your search here.</h4>
+<input type="text" name="search" placeholder="Search..">
+ <li><a href="/Overwatch">Overwatch</a></li>
+ <li><a href="/CallofDutyWW2">CallofDutyWW2</a></li>
+ <li><a href="/TeamFortress2">TeamFortress2</a></li>
+ <li><a href="/Dota2">Dota2</a></li>
+ <li><a href="/Fortnite">Fortnite</a></li>
+ <li><a href="/chat">chat</a></li>

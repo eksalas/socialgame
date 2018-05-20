@@ -1,0 +1,47 @@
+{% extends "default.html" %}
+{% load static %}
+{% block title %}
+{{ title }}
+{% endblock %}
+{% block content %}
+
+<html>
+<body style="background-image:url(http://gipsypixel.com/wp-content/uploads/2017/11/Dota-2-Game-Wallpaper-High-Resolution-Widescreen-Tag-Hd-Page-Of-Computer.jpg);" >
+
+<h4>Enter your search here.</h4>
+<input type="text" name="search" placeholder="Search..">
+
+ <div class="small-6 large-centered columns" style="text-align:center">
+ <h1><font color="yellow">Dota2</h1>
+<p><br><br><font color="yellow"><style="font-family:verdana;"></p>
+<p><br><br><font color="yellow"><style="font-family:verdana;"></p>
+<h4><span class="stars"></span></h4>Dota 2 is a free-to-play multiplayer online battle arena (MOBA) video game developed and published by Valve Corporation. ... Dota 2 is played in matches between two teams of five players, with each team occupying and defending their own separate base on the map.</p>
+</div>
+
+<div class="Dota2">
+
+</div>
+
+<div>
+<form action="" method="post" style="text-align:center">
+{% csrf_token %}
+{{ form.errors }}
+{{ form.comment }}
+<input type="submit" value="Post" class="button large">
+</form>
+</div>
+<h4 class="subheader"style="text-align:"left"><style="font-family:verdana;">Enter your reviews here.</h4>
+<div id="comments_list">
+<ul id="comments">
+{% for element in content %}
+<li>{{ element.comment }}</li>
+{% endfor %}
+</ul>
+<script>
+$(document).ready(function(){
+    $('#myTable').DataTable();
+});
+{% endblock %}
+
+</body>
+</html>

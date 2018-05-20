@@ -1,0 +1,47 @@
+{% extends "default.html" %}
+{% load static %}
+{% block title %}
+{{ title }}
+{% endblock %}
+{% block content %}
+
+<html>
+<body style="background-image:url(https://i.redd.it/aq3r313w8zsy.png);" >
+
+<h4>Enter your search here.</h4>
+<input type="text" name="search" placeholder="Search..">
+
+ <div class="small-6 large-centered columns" style="text-align:center">
+ <h1><font color="yellow">CallofDutyWW2</h1>
+<p><br><br><font color="yellow"><style="font-family:verdana;"></p>
+<p><br><br><font color="yellow"><style="font-family:verdana;"></p>
+<h4><span class="stars"></span></h4>is a first-person shooter video game developed by Sledgehammer Games and published by Activision. It was released worldwide on November 3, 2017 for Microsoft Windows, PlayStation 4 and Xbox One. It is the fourteenth main installment in the Call of Duty series and the first title in the series to be set primarily during World War II since Call of Duty: World at War in 2008.</p>
+</div>
+
+<div class="CallofDutyWW2">
+
+</div>
+
+<div>
+<form action="" method="post" style="text-align:center">
+{% csrf_token %}
+{{ form.errors }}
+{{ form.comment }}
+<input type="submit" value="Post" class="button large">
+</form>
+</div>
+<h4 class="subheader"style="text-align:"left"><style="font-family:verdana;">Enter your reviews here.</h4>
+<div id="comments_list">
+<ul id="comments">
+{% for element in content %}
+<li>{{ element.comment }}</li>
+{% endfor %}
+</ul>
+<script>
+$(document).ready(function(){
+    $('#myTable').DataTable();
+});
+{% endblock %}
+
+</body>
+</html>

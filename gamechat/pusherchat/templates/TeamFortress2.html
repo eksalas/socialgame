@@ -1,0 +1,47 @@
+{% extends "default.html" %}
+{% load static %}
+{% block title %}
+{{ title }}
+{% endblock %}
+{% block content %}
+
+<html>
+<body style="background-image:url(https://images4.alphacoders.com/102/10208.jpg);" >
+
+<h4>Enter your search here.</h4>
+<input type="text" name="search" placeholder="Search..">
+
+ <div class="small-6 large-centered columns" style="text-align:center">
+ <h1><font color="yellow">TeamFortress2</h1>
+<p><br><br><font color="yellow"><style="font-family:verdana;"></p>
+<p><br><br><font color="yellow"><style="font-family:verdana;"></p>
+<h4><span class="stars"></span></h4>is a team-based multiplayer first-person shooter video game developed and published by Valve Corporation. ... It was released as part of the video game bundle The Orange Box in October 2007 for Microsoft Windows and the Xbox 360.</p>
+</div>
+
+<div class="TeamFortress2">
+
+</div>
+
+<div>
+<form action="" method="post" style="text-align:center">
+{% csrf_token %}
+{{ form.errors }}
+{{ form.comment }}
+<input type="submit" value="Post" class="button large">
+</form>
+</div>
+<h4 class="subheader"style="text-align:"left"><style="font-family:verdana;">Enter your reviews here.</h4>
+<div id="comments_list">
+<ul id="comments">
+{% for element in content %}
+<li>{{ element.comment }}</li>
+{% endfor %}
+</ul>
+<script>
+$(document).ready(function(){
+    $('#myTable').DataTable();
+});
+{% endblock %}
+
+</body>
+</html>
